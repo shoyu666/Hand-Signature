@@ -77,7 +77,8 @@ public class SignatureView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
-        if (isEmpty()) {
+        if (width>0) {
+            //高版本手机不调用问题
             this.m_CropTopLeft = new Point((float) width, (float) height);
             this.m_CropBotRight = new Point(0.0f, 0.0f);
         }
